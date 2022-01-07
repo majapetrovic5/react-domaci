@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { Button } from './Button';
 import Clients from './Clients';
 import './MainSection.css';
 
@@ -11,8 +12,16 @@ function MainSection() {
     <div className='main-container'>
       <h1>FIND THE BEST DOCTOR </h1>
         <h1>FOR YOU</h1>
-      <p>Make an appointment and contribute to your health</p>    
-      </div>
+      <p>Make an appointment and contribute to your health</p>  
+      <div className='main-btns'>
+        <Button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large' link='/doctors'
+        >
+          MAKE AN APPOINTMENT
+        </Button>  
+      </div> </div>
       <div className='main-text'>
       <h1>ABOUT DOCFIND</h1>
       <p>DocFind contains the licensing background and
@@ -26,7 +35,8 @@ function MainSection() {
 The DocFind was the only online physicia
  directory of its kind when it was launched in 1996.
   The DocFind is still recognized for its easy to use search engine.DocFind contains 
-  the licensing background and a lot of information bar of its kind engine lot.</p>
+  the licensing background and a lot of information bar of its kind engine lot and 
+  local news broadcasts and local news broadcasts is still lot.</p>
       </div>
       <div className='main-clients'>
           <Clients/>
