@@ -27,7 +27,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/appointmets'
+                to='/appointments'
                 className='nav-links'
               >
                 YOUR APPOINTMENTS
