@@ -34,10 +34,14 @@
   font-size: 30px;
 }
 
+.btn--test {
+  color: rgb(34, 123, 134);
+}
+
 .btn--large:hover,
 .btn--medium:hover {
   transition: all 0.3s ease-out;
   background: #fff;
-  color: #242424;
+  color: #2e7191;
   transition: 250ms;
 }
