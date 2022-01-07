@@ -29,6 +29,7 @@ h1 {
   flex: 1;
   margin: 0 1rem;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .client__name {
@@ -46,7 +47,7 @@ h1 {
 .client__text {
   font-size: 18px;
   line-height: 24px;
-  color: rgb(126, 126, 126);
+  color: rgb(99, 99, 99);
   font-size: 24px;
   text-align: center;
 }
@@ -73,6 +74,7 @@ ul {
   overflow: hidden;
   align-self: center;
   background-color: rgb(34, 123, 134);
+  height: 360px;
 }
 
 .client__pic-wrap::after {
@@ -87,7 +89,7 @@ ul {
   color: #fff;
   background-color: rgb(34, 123, 134);
   box-sizing: border-box;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .client__img {
@@ -109,6 +111,40 @@ ul {
   transform: scale(1.1);
 }
 
+ul {
+  display: flex;
+}
+
 li {
   padding: 20px;
+  align-self: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .clients__items {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .clients__item {
+    margin-bottom: 2rem;
+  }
+}
+
+.fa-star {
+  font-size: 30px;
+  color: rgb(34, 123, 134);
+}
+
+.star > p {
+  font-size: 30px;
+  color: rgb(34, 123, 134);
+  margin-left: 5px;
+  margin-right: 3px;
+}
+
+.star {
+  display: flex;
+  justify-content: space-between;
 }
