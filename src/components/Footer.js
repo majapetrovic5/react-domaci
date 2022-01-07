@@ -19,7 +19,8 @@ function Footer() {
               className='footer-input'
               placeholder='Your Question'
             />
-            <Button buttonStyle='btn--outline' link='/'>Send</Button>
+            <Button buttonStyle='btn--outline' link='/'
+              >Send</Button>
           </form>
         </div>
       </section>
