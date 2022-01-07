@@ -21,7 +21,7 @@ function Clients() {
             <Client
               text='It is a long established fact that a reader will be 
               distracted by the readable content of a page when looking at its layout.'
-              name='Rebecca Gilbert'
+              name='Robert Gilbert'
               picture={Img2}
             />
             <Client
@@ -29,6 +29,7 @@ function Clients() {
               distracted by the readable content of a page when looking at its layout.'
               name='Chuck Cooper'
               picture={Img3} />
+             
           </ul>
         </div>
       </div>
