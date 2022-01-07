@@ -3,11 +3,34 @@ import '../App.css';
 import { Button } from './Button';
 import Clients from './Clients';
 import './MainSection.css';
-
+import Img1 from '../assets/images/img-client1.jpg';
+import Img2 from '../assets/images/img-clients2.jpg';
+import Img3 from '../assets/images/img-client3.jpg';
 
 
 function MainSection() {
+
+  
+  const array=[{
+    text:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    name:'Maria Reyes',
+    picture:Img1,
+    
+  },
+{
+    text:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    name:'Robert Gilbert',
+    picture:Img2,
+    },
+  
+  {  text:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    name:'Chuck Cooper',
+    picture:Img3,
+     }
+  ]
+
   return (
+
     <>
     <div className='main-container'>
       <h1>FIND THE BEST DOCTOR </h1>
@@ -39,7 +62,7 @@ The DocFind was the only online physicia
   local news broadcasts and local news broadcasts is still lot.</p>
       </div>
       <div className='main-clients'>
-          <Clients/>
+          <Clients title='WHAT OUR CLIENTS SAYS?' array1={array} type='clients'/>
       </div>
   
       </>
