@@ -2,8 +2,22 @@ import React from 'react';
 import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import  { useState } from 'react';
 
 function Footer() {
+
+  const onClick= () => {
+     if(buttonClick!='') {
+    setButtonClick('');
+    setTimeout(() => {
+       alert('You have successfully send a message.');
+    }, 3);
+   }
+  };
+  const onChange= (e) => setButtonClick(e.target.value);
+ 
+ const [buttonClick, setButtonClick] = useState('');
+
   return (
     <div className='footer-container'>
       <section className='footer-message'>
@@ -18,9 +32,11 @@ function Footer() {
             <input
               className='footer-input'
               placeholder='Your Question'
+              value={buttonClick}
+              onChange={onChange}
             />
-            <Button buttonStyle='btn--outline' link='/'
-              >Send</Button>
+          <Button buttonStyle='btn--outline' link={'/'} onClick={onClick} onChange={onChange}>
+              Send</Button>
           </form>
         </div>
       </section>
