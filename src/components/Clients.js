@@ -13,13 +13,13 @@ function Clients({title, array1, array2, type}) {
         
 {
   array1.map(item => (<Client name={item.name} text={item.text} picture={item.picture}
-    spec={item.spec }type={type}>  </Client>)) }
+    spec={item.spec }type={type} star={item.star}>  </Client>)) }
 </ul>
 {
  array2 != null ? <ul className='clients__items'>
  {
    array2.map(item => (<Client name={item.name} text={item.text} picture={item.picture}
-    spec={item.spec}type={type}>  </Client>)) }
+    spec={item.spec}type={type} star={item.star}>  </Client>)) }
 </ul> : <></>
 }
           

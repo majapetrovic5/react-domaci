@@ -1,9 +1,22 @@
 import React from 'react';
 import {Button} from './Button';
+import  { useState } from 'react';
 
 
+function Client({text,name,picture,spec, type,star}) {
 
-function Client({text,name,picture,spec, type}) {
+ 
+  const [starNum, setstarNum] = useState(star);
+  const [clicked, setClicked] = useState(false);
+  const onClick1= ()=>{
+       if(clicked==false) setstarNum(starNum+1);   
+       setClicked(true);
+  }
+
+  const onClick2= ()=>{
+    setstarNum(starNum-1);   
+    setClicked(false);
+}
   return (
     <>
       <li className='client'>
@@ -24,8 +37,10 @@ function Client({text,name,picture,spec, type}) {
               <ul>
              <li>
                <div className='star'>
-             <i class="fas fa-star"></i>
-             <p>{Math.floor((Math.random() * 5) + 1)}</p>
+                 {clicked== false ? 
+               <i class="far fa-star" onClick={onClick1}></i>  
+              : <i class="fas fa-star" onClick={onClick2} ></i>}
+             <p>{starNum}</p>
              </div>
              
              </li>
