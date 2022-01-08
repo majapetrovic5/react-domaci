@@ -3,7 +3,7 @@ import {Button} from './Button';
 import  { useState } from 'react';
 
 
-function Client({text,name,picture,spec, type,star}) {
+function Client({id,text, name,picture,spec, type,star, makeAp}) {
 
  
   const [starNum, setstarNum] = useState(star);
@@ -48,7 +48,8 @@ function Client({text,name,picture,spec, type,star}) {
           className='btns'
           buttonStyle='btn--test'
           buttonSize='btn--medium' link='/doctors'
-        >
+          onClick={makeAp}
+          id={id}>
           MAKE AN APPOINTMENT
         </Button></li> </ul>  
  
