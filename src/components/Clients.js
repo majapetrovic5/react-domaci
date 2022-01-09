@@ -3,7 +3,7 @@ import './Clients.css';
 import Client from './Client'; 
 
 
-function Clients({title, array1, array2, type,makeAp}) {
+function Clients({title, array1, array2, type,makeAp, star1,star2}) {
   return (
     <div className='clients'>
       <h1>{title}</h1>
@@ -12,14 +12,16 @@ function Clients({title, array1, array2, type,makeAp}) {
           <ul className='clients__items'>
         
 {
-  array1.map(item => (<Client id={item.id} name={item.name} text={item.text} picture={item.picture}
-    spec={item.spec }type={type} star={item.star} makeAp={makeAp}>  </Client>)) }
+  array1.map(item => (<Client key={item.id} id={item.id} name={item.name} text={item.text} picture={item.picture}
+    spec={item.spec }type={type} star={item.star} checked={item.checked}  makeAp={makeAp} 
+    star1={star1} star2={star2}>  </Client>)) }
 </ul>
 {
  array2 != null ? <ul className='clients__items'>
  {
-   array2.map(item => (<Client id={item.id} name={item.name} text={item.text} picture={item.picture}
-    spec={item.spec}type={type} star={item.star} makeAp={makeAp} >  </Client>)) }
+   array2.map(item => (<Client key={item.id} id={item.id} name={item.name} text={item.text} picture={item.picture}
+    spec={item.spec}type={type} star={item.star} checked={item.checked} makeAp={makeAp} 
+    star1={star1} star2={star2}>  </Client>)) }
 </ul> : <></>
 }
           

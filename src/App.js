@@ -17,6 +17,7 @@ function App() {
     spec:'Dermatology',
     date: '05.02.2021. 11:35am',
     star:130,
+    checked: false,
     added:false,
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-0.jpg'
   },
@@ -26,6 +27,7 @@ function App() {
     name:'Elizabeth Abell',
     spec:'Urology',
     added:false,
+    checked: false,
     star:70,
     date: '18.01.2021. 09:35am',
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-1.jpg',
@@ -36,6 +38,7 @@ function App() {
     name:'Melissa A. Adler',
     spec:'Mental Health',
     added:false,
+    checked: false,
     star:121,
     date: '20.01.2021. 11:30am',
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-2.jpg' }
@@ -46,6 +49,7 @@ function App() {
     name:'Mark D. Ahlquist',
     star:98,
     added:false,
+    checked: false,
     spec:'Obstetrics & Gynecology',
     date: '09.02.2021. 12:30pm',
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-4.jpg',
@@ -56,6 +60,7 @@ function App() {
     name:'Michael T. Akin',
     spec:'Gastroenterology',
     star:403,
+    checked: false,
     date: '15.01.2021. 10:40am',
     added:false,
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-5.jpg' },
@@ -64,6 +69,7 @@ function App() {
     name:'Luke A. Albares',
     spec:'Pediatrics',
     star:88,
+    checked: false,
     date: '17.02.2021. 14:30pm',
     added:false,
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-3.jpg',
@@ -74,12 +80,85 @@ function App() {
   const [array2, setArr2] = useState(arrayd2);
   const [appointments, setApp] = useState([]);
 
+  const star1 = (id) => {
+    let arr1 = [];
+    array1.forEach(element => {
+      if(element.id === id) {
+      if(!element.checked) {
+        element.star = element.star + 1;
+        element.checked = true;
+        arr1.push(element);
+      }}
+      else{
+        arr1.push(element);
+      }
+    }
+    );
+    console.log(arr1);
+    setArr1(arr1);
+    console.log(array1);
+
+    
+    let arr2 = [];
+    array2.forEach(element => {
+      if(element.id === id) {
+      if(!element.checked) {
+        element.star = element.star + 1;
+        element.checked = true;
+        arr2.push(element);
+      }}
+      else{
+        arr2.push(element);
+      }
+    }
+    );
+    console.log(arr2);
+    setArr2(arr2);
+    console.log(array2);
+  }
+  
+  const star2 = (id) => {
+
+    let arr1 = [];
+    array1.forEach(element => {
+      if(element.id === id) {
+      if(element.checked) {
+        element.star = element.star - 1;
+        element.checked = false;
+        arr1.push(element);
+      }}
+      else{
+        arr1.push(element);
+      }
+    }
+    );
+    setArr1(arr1);
+   
+    let arr2 = [];
+
+    array2.forEach(element => {
+
+      if(element.id === id) {
+
+      if(element.checked) {
+        element.star = element.star - 1;
+        element.checked = false;
+        arr2.push(element);
+      }}
+      else{
+        arr2.push(element);
+      }
+    }
+    );
+    setArr2(arr2);
+  }
+
   const makeAp = (id)=>{
    
     array1.forEach(element => {
       if(element.id===id) element.added=true;
     });
-  
+
     array2.forEach(element => {
       if(element.id===id) element.added=true;
     });
@@ -111,7 +190,8 @@ function App() {
     <Navbar></Navbar>
     <Routes>
       <Route path='/'element={<Main/>}></Route>
-      <Route path='/doctors' element={<Doctors array1={array1} array2={array2} makeAp={makeAp}/>}></Route>
+      <Route path='/doctors' element={<Doctors array1={array1} array2={array2} makeAp={makeAp}
+      star1={star1} star2={star2}/>}></Route>
       <Route path='/appointments' element={<Appointments appointments={appointments} delApp={delApp}/>}></Route>
     </Routes>
     <Footer></Footer>

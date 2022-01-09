@@ -3,20 +3,8 @@ import {Button} from './Button';
 import  { useState } from 'react';
 
 
-function Client({id,text, name,picture,spec, type,star, makeAp}) {
+function Client({id,text, name,picture,spec, type,star, checked, makeAp,star1,star2}) {
 
- 
-  const [starNum, setstarNum] = useState(star);
-  const [clicked, setClicked] = useState(false);
-  const onClick1= ()=>{
-       if(clicked==false) setstarNum(starNum+1);   
-       setClicked(true);
-  }
-
-  const onClick2= ()=>{
-    setstarNum(starNum-1);   
-    setClicked(false);
-}
   return (
     <>
       <li className='client'>
@@ -36,11 +24,11 @@ function Client({id,text, name,picture,spec, type,star, makeAp}) {
             <div>
               <ul>
              <li>
-               <div className='star'>
-                 {clicked== false ? 
-               <i class="far fa-star" onClick={onClick1}></i>  
-              : <i class="fas fa-star" onClick={onClick2} ></i>}
-             <p>{starNum}</p>
+               <div className='star' >
+                 {checked==false ? 
+               <i class="far fa-star" onClick={()=>{star1(id)}}></i>  
+              : <i class="fas fa-star" onClick={()=>{star2(id)}} ></i>}
+             <p>{star}</p>
              </div>
              
              </li>
