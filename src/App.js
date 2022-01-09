@@ -14,6 +14,7 @@ function App() {
     id:1,
     text:'As a dermatologist, I enjoy caring for patients of all ages. I have a special interest in skin cancer, however I enjoy caring for all forms of skin disease including acne, skin cancer and eczema.My goal is to treat patients with the same kind of care I would want my loved ones to receive.In addition, I like to read and to watch movies.',
     name:'Alison K. Adams',
+    times:0,
     spec:'Dermatology',
     date: '05.02.2021. 11:35am',
     star:130,
@@ -28,6 +29,7 @@ function App() {
     spec:'Urology',
     added:false,
     checked: false,
+    times:0,
     star:70,
     date: '18.01.2021. 09:35am',
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-1.jpg',
@@ -38,6 +40,7 @@ function App() {
     name:'Melissa A. Adler',
     spec:'Mental Health',
     added:false,
+    times:0,
     checked: false,
     star:121,
     date: '20.01.2021. 11:30am',
@@ -49,6 +52,7 @@ function App() {
     name:'Mark D. Ahlquist',
     star:98,
     added:false,
+    times:0,
     checked: false,
     spec:'Obstetrics & Gynecology',
     date: '09.02.2021. 12:30pm',
@@ -61,6 +65,7 @@ function App() {
     spec:'Gastroenterology',
     star:403,
     checked: false,
+    times:0,
     date: '15.01.2021. 10:40am',
     added:false,
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-5.jpg' },
@@ -70,12 +75,13 @@ function App() {
     spec:'Pediatrics',
     star:88,
     checked: false,
+    times:0,
     date: '17.02.2021. 14:30pm',
     added:false,
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-3.jpg',
      }
   ]
-
+const [num, setNum] = useState(0);
   const [array1, setArr1] = useState(arrayd1);
   const [array2, setArr2] = useState(arrayd2);
   const [appointments, setApp] = useState([]);
@@ -156,11 +162,19 @@ function App() {
   const makeAp = (id)=>{
    
     array1.forEach(element => {
-      if(element.id===id) element.added=true;
+      if(element.id===id) {
+        element.added=true; 
+        element.times=element.times+1;
+        if(element.times<=1) setNum(num+1);
+      }
     });
 
     array2.forEach(element => {
-      if(element.id===id) element.added=true;
+      if(element.id===id)  {
+        element.added=true; 
+        element.times=element.times+1;
+        if(element.times<=1) setNum(num+1);
+      }
     });
 
     let addedApp1 = array1.filter((item)=>item.added==true);
@@ -174,7 +188,10 @@ function App() {
    
      console.log(id);
      appointments.forEach(element => {
-      if(element.id==id) element.added=false;
+      if(element.id==id) {element.added=false;  
+        element.times=element.times-1;
+        setNum(num-1); 
+       }
       
     });
 
@@ -187,7 +204,7 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
-    <Navbar></Navbar>
+    <Navbar num={num}></Navbar>
     <Routes>
       <Route path='/'element={<Main/>}></Route>
       <Route path='/doctors' element={<Doctors array1={array1} array2={array2} makeAp={makeAp}
