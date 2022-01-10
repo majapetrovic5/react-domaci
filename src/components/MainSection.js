@@ -63,7 +63,7 @@ The DocFind was the only online physicia
   local news broadcasts and local news broadcasts is still lot, news and news.</p>
       </div>
       <div className='main-clients'>
-          <Clients title='WHAT OUR CLIENTS SAYS?' array1={array} type='clients'/>
+          <Clients title='WHAT DO OUR CLIENTS SAY?' array1={array} type='clients'/>
       </div>
   
       </>
