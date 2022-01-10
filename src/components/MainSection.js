@@ -56,10 +56,11 @@ function MainSection() {
            numerous state and national publications such as Newsweek Magazine 
            and The Wall Street Journal as well as national and local news broadcasts.
 The DocFind was the only online physicia
+ directory of its kind when it was launched in 1996. The DocFind was the only online physicia
  directory of its kind when it was launched in 1996.
   The DocFind is still recognized for its easy to use search engine.DocFind contains 
   the licensing background and a lot of information bar of its kind engine lot and 
-  local news broadcasts and local news broadcasts is still lot.</p>
+  local news broadcasts and local news broadcasts is still lot, news and news.</p>
       </div>
       <div className='main-clients'>
           <Clients title='WHAT OUR CLIENTS SAYS?' array1={array} type='clients'/>
