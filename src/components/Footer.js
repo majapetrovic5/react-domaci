@@ -3,6 +3,7 @@ import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import  { useState } from 'react';
+import Swal from 'sweetalert2';
 
 function Footer() {
 
@@ -10,7 +11,20 @@ function Footer() {
      if(buttonClick!='') {
     setButtonClick('');
     setTimeout(() => {
-       alert('You have successfully send a message.');
+      // alert('You have successfully send a message.');
+     Swal.fire(
+       {
+          title: 'Sent!',
+          text: 'Your message has been successfully send.',
+          icon:'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: 'rgb(34, 123, 134)',
+       }
+     );
+
+
+
+
     }, 3);
    }
   };
