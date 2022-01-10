@@ -30,12 +30,10 @@ function Navbar({num}) {
                 to='/appointments'
                 className='nav-links'
               >
-                YOUR APPOINTMENTS
+                YOUR APPOINTMENTS: {num}
               </Link>
             </li>
-            <li className='nav-item'>
-            <p>Scheduled appointments:{num}</p>
-            </li>
+            
           </ul>
         </div>
       </nav>
