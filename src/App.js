@@ -26,7 +26,7 @@ function App() {
   id:2,
     text:'My area of focus in health care is within the perioperative management of orthopedic patients. I also have a special interest in working with older adults.During my free time I enjoy spending time with my husband, son, daughter and extended family. In addition, I like to read, have fun with friends and relax.',
     name:'Elizabeth Abell',
-    spec:'Urology',
+    spec:'Urinology',
     added:false,
     checked: false,
     times:0,
@@ -48,13 +48,13 @@ function App() {
   ]
 
   const arrayd2=[{
-    id:4,text:'I have a passion for working with women and their families. As a women’s health care provider, I want to provide women with education about their health to make fully informed decisions and be the driving force of their health.I also enjoy advanced endoscop.',
+    id:4,text:'I have a passion for working with women and their families. As a women’s health care provider, I want to provide women with education about their health to make fully informed decisions and be the driving force of their health.I, also enjoy advanced endoscop.',
     name:'Mark D. Ahlquist',
     star:98,
     added:false,
     times:0,
     checked: false,
-    spec:'Obstetrics & Gynecology',
+    spec:'Gynecology',
     date: '09.02.2021. 12:30pm',
     picture:'https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/doctors-grid/348x350-4.jpg',
     
@@ -62,7 +62,7 @@ function App() {
 {
   id:5,text:'I enjoy my work as a gastroenterologist because it offers me the combination of procedural and office skills I use on a daily basis. Working in a field where I save lives by detecting early cancers and preventing it is extremely rewarding. I also enjoy advanced endoscop.',
     name:'Michael T. Akin',
-    spec:'Gastroenterology',
+    spec:'Gastrology',
     star:403,
     checked: false,
     times:0,
@@ -163,17 +163,15 @@ const [num, setNum] = useState(0);
    
     array1.forEach(element => {
       if(element.id===id) {
-        element.added=true; 
-        element.times=element.times+1;
-        if(element.times<=1) setNum(num+1);
+        if(element.added===false) {setNum(num+1);
+        element.added=true; } 
       }
     });
 
     array2.forEach(element => {
       if(element.id===id)  {
-        element.added=true; 
-        element.times=element.times+1;
-        if(element.times<=1) setNum(num+1);
+        if(element.added===false) {setNum(num+1);
+          element.added=true; } 
       }
     });
 
@@ -188,9 +186,10 @@ const [num, setNum] = useState(0);
    
      console.log(id);
      appointments.forEach(element => {
-      if(element.id==id) {element.added=false;  
-        element.times=element.times-1;
-        setNum(num-1); 
+      if(element.id==id) {
+        if(element.added===true) {setNum(num-1);
+        element.added=false;  }
+        
        }
       
     });
