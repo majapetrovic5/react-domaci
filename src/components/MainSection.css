@@ -31,7 +31,8 @@
   color: rgba(255, 255, 255, 0.493);
   font-size: 40px;
   padding: 30px;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: -10px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -62,6 +63,7 @@
 .main-clients {
   margin-top: 0px;
   height: 100vh;
+  margin-top: 40px;
 }
 
 .main-btns {

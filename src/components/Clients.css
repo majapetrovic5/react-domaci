@@ -1,6 +1,7 @@
 .clients {
-  padding: 4rem;
+  padding: 2rem;
   background: #fff;
+  margin-top: 25px;
 }
 
 h1 {
@@ -20,7 +21,7 @@ h1 {
 
 .clients__wrapper {
   position: relative;
-  margin: 50px 0 45px;
+  margin: 0px 0 45px;
 }
 
 .clients__items {
@@ -34,18 +35,20 @@ h1 {
 
 .client__name {
   color: rgb(16, 75, 83);
-  padding: 10px;
-  font-size: 20px;
+  padding: 7px;
+  font-size: 25px;
   line-height: 24px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .client__info {
   padding: 20px 30px 30px;
+  margin-top: 8px;
 }
 
 .client__text {
-  font-size: 18px;
+  font-size: 10px;
   line-height: 24px;
   color: rgb(99, 99, 99);
   font-size: 24px;
@@ -74,7 +77,7 @@ ul {
   overflow: hidden;
   align-self: center;
   background-color: rgb(34, 123, 134);
-  height: 360px;
+  height: 415px;
 }
 
 .client__pic-wrap::after {

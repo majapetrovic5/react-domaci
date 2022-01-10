@@ -2,7 +2,8 @@
   background: rgb(255, 255, 255);
   height: 30vh;
   background-color: rgba(255, 255, 255, 0.37);
-  height: 100vh;
+  height: 50vh;
+  margin-top: -50px;
 }
 
 .app {
@@ -16,13 +17,13 @@
   object-fit: contain;
 }
 
-h1 {
+.app > h1 {
   text-align: center;
   color: rgb(34, 123, 134);
   font-size: 40px;
   padding: 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .btnap {
@@ -51,6 +52,7 @@ h1 {
 .app__wrapper {
   position: relative;
   margin: 50px 0 45px;
+  height: 100vh;
 }
 
 .app__items {
@@ -150,6 +152,7 @@ ul {
 li {
   padding: 30px;
   align-self: center;
+  width: 100%;
 }
 
 .appdoc__container {
@@ -169,5 +172,5 @@ li {
   color: #fff;
   font-size: 50px;
   margin-top: -100px;
-  padding: 50px;
+  padding: 55px;
 }
